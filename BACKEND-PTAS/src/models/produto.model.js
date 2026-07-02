@@ -6,7 +6,7 @@ export async function listarProdutos() {
 
 export async function buscarProdutoPorId(id) {
   return await prisma.produto.findUnique({
-    where: { id: Number(id) },
+    where: { id },
   });
 }
 
@@ -18,13 +18,13 @@ export async function criarProduto(dados) {
 
 export async function atualizarProduto(id, dados) {
   return await prisma.produto.update({
-    where: { id: Number(id) },
+    where: { id },
     data: dados,
   });
 }
 
 export async function deletarProduto(id) {
   return await prisma.produto.delete({
-    where: { id: Number(id) },
+    where: { id },
   });
 }
